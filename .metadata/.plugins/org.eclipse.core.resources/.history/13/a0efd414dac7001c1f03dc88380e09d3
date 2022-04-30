@@ -1,0 +1,66 @@
+package tests;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import junit.framework.Assert;
+
+public class practice {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver", "D:\\ChromeDri\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.get("https://www.calculator.net/");
+		
+		Properties prop1 = new Properties();
+		String path = System.getProperty("user.dir");
+		FileInputStream fin = new FileInputStream(path+"\\src\\main\\java\\resourses\\data.properties");
+		prop1.load(fin);
+		
+		String num1 = prop1.getProperty("m1");
+		int n1=Integer.parseInt(num1);  
+	
+		String num2 = prop1.getProperty("m2");
+		int n2=Integer.parseInt(num2);  
+		
+		int expectedans = n1*n2;
+		
+		
+		//driver.findElement(By.id("sciOutPut")).sendKeys(num1);
+		//driver.findElement(By.cssSelector("span[onclick=\"r('+')\"]")).click();
+		//driver.findElement(By.id("sciOutPut")).sendKeys(num2);
+		//driver.findElement(By.cssSelector("span[onclick=\"r('=')\"]")).click();
+			
+		//span[onclick="r(4)"]
+		driver.findElement(By.cssSelector("span[onclick='r(4)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(2)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(3)']")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick=\"r('*')\"]")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick='r(5)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(2)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(5)']")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick=\"r('=')\"]")).click();
+		
+		String abc = driver.findElement(By.id("sciOutPut")).getText();
+		System.out.println(abc);
+		
+		Assert.assertEquals(abc, expectedans);
+	}
+
+}

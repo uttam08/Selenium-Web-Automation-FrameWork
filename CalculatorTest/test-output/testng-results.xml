@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-04-30T13:03:09 IST" name="Suite" finished-at="2022-04-30T13:03:22 IST" duration-ms="12982">
+    <groups>
+    </groups>
+    <test started-at="2022-04-30T13:03:09 IST" name="Cal-Test" finished-at="2022-04-30T13:03:22 IST" duration-ms="12982">
+      <class name="tests.calTests">
+        <test-method is-config="true" signature="start()[pri:0, instance:tests.calTests@15cafec7]" started-at="2022-04-30T13:03:09 IST" name="start" finished-at="2022-04-30T13:03:13 IST" duration-ms="3636" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method signature="addTest()[pri:0, instance:tests.calTests@15cafec7]" started-at="2022-04-30T13:03:13 IST" name="addTest" finished-at="2022-04-30T13:03:14 IST" duration-ms="607" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addTest -->
+        <test-method is-config="true" signature="end()[pri:0, instance:tests.calTests@15cafec7]" started-at="2022-04-30T13:03:14 IST" name="end" finished-at="2022-04-30T13:03:14 IST" duration-ms="89" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end -->
+        <test-method is-config="true" signature="start()[pri:0, instance:tests.calTests@15cafec7]" started-at="2022-04-30T13:03:14 IST" name="start" finished-at="2022-04-30T13:03:16 IST" duration-ms="2316" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method signature="divTest()[pri:0, instance:tests.calTests@15cafec7]" started-at="2022-04-30T13:03:16 IST" name="divTest" finished-at="2022-04-30T13:03:16 IST" duration-ms="418" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- divTest -->
+        <test-method is-config="true" signature="end()[pri:0, instance:tests.calTests@15cafec7]" started-at="2022-04-30T13:03:16 IST" name="end" finished-at="2022-04-30T13:03:17 IST" duration-ms="83" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end -->
+        <test-method is-config="true" signature="start()[pri:0, instance:tests.calTests@15cafec7]" started-at="2022-04-30T13:03:17 IST" name="start" finished-at="2022-04-30T13:03:19 IST" duration-ms="2413" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method signature="mulTest()[pri:0, instance:tests.calTests@15cafec7]" started-at="2022-04-30T13:03:19 IST" name="mulTest" finished-at="2022-04-30T13:03:19 IST" duration-ms="322" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mulTest -->
+        <test-method is-config="true" signature="end()[pri:0, instance:tests.calTests@15cafec7]" started-at="2022-04-30T13:03:19 IST" name="end" finished-at="2022-04-30T13:03:19 IST" duration-ms="79" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end -->
+        <test-method is-config="true" signature="start()[pri:0, instance:tests.calTests@15cafec7]" started-at="2022-04-30T13:03:19 IST" name="start" finished-at="2022-04-30T13:03:22 IST" duration-ms="2250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method signature="subTest()[pri:0, instance:tests.calTests@15cafec7]" started-at="2022-04-30T13:03:22 IST" name="subTest" finished-at="2022-04-30T13:03:22 IST" duration-ms="617" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- subTest -->
+        <test-method is-config="true" signature="end()[pri:0, instance:tests.calTests@15cafec7]" started-at="2022-04-30T13:03:22 IST" name="end" finished-at="2022-04-30T13:03:22 IST" duration-ms="95" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end -->
+      </class> <!-- tests.calTests -->
+    </test> <!-- Cal-Test -->
+  </suite> <!-- Suite -->
+</testng-results>

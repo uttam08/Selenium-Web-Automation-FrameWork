@@ -1,0 +1,43 @@
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import resourses.Base;
+
+public class Tests extends Base{
+
+	@BeforeMethod
+	public void start() throws IOException
+	{
+		driver = initializeBrowser();
+		String url = prop.getProperty("url");
+		driver.get(url);
+	}
+	
+	@Test
+	public void addTest()
+	{
+		driver.findElement(By.id("sciOutPut")).sendKeys(null);
+	}
+	
+	@Test
+	public void subTest()
+	{
+		
+	}
+	
+	@Test
+	public void mulTest()
+	{
+		
+	}
+	
+	@Test
+	public void divTest()
+	{
+		
+	}
+
+}

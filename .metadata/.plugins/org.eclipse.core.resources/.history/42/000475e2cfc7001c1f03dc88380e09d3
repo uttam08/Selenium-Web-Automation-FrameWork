@@ -1,0 +1,14 @@
+browser = chrome
+url = "https://www.calculator.net/"
+
+n1 = 423
+n2 = 525
+
+n3 = 4000
+n4 = 200
+
+n5 = -234234
+n6 = 345345
+
+n7 = 234823
+n8 = -23094823

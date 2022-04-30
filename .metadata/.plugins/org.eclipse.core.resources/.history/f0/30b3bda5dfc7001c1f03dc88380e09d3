@@ -1,0 +1,14 @@
+browser = chrome
+url = "https://www.calculator.net/"
+
+m1 = 423
+m2 = 525
+
+d1 = 4000
+d2 = 200
+
+a1 = -234234
+a2 = 345345
+
+s1 = 234823
+s2 = -23094823

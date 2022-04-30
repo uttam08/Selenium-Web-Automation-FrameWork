@@ -1,0 +1,171 @@
+package tests;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import PageObjects.calculatorPage;
+import resourses.Base;
+import resourses.calculateExpected;
+
+public class calTests extends Base{
+	
+	calculatorPage cp = new calculatorPage(driver);
+	
+
+	@BeforeMethod
+	public void start() throws IOException
+	{
+		driver = initializeBrowser();
+		String url = prop.getProperty("url");
+		driver.get(url);
+	}
+	
+	@Test
+	public void addTest()
+	{
+		calculatorPage cp = new calculatorPage(driver);
+		
+		String expectedResultString = calculateExpected.addexp();
+		
+		cp.getBtnMinus().click();
+		cp.getnum2().click();
+		cp.getnum3().click();
+		cp.getnum4().click();
+		cp.getnum2().click();
+		cp.getnum3().click();
+		cp.getnum4().click();
+		
+		cp.getBtnPlus().click();
+//		driver.findElement(By.cssSelector("span[onclick=\"r('-')\"]")).click();
+//		
+//		driver.findElement(By.cssSelector("span[onclick='r(2)']")).click();
+//		driver.findElement(By.cssSelector("span[onclick='r(3)']")).click();
+//		driver.findElement(By.cssSelector("span[onclick='r(4)']")).click();
+//		driver.findElement(By.cssSelector("span[onclick='r(2)']")).click();
+//		driver.findElement(By.cssSelector("span[onclick='r(3)']")).click();
+//		driver.findElement(By.cssSelector("span[onclick='r(4)']")).click();
+//		
+//		driver.findElement(By.cssSelector("span[onclick=\"r('+')\"]")).click();
+//		
+//		driver.findElement(By.cssSelector("span[onclick='r(3)']")).click();
+//		driver.findElement(By.cssSelector("span[onclick='r(4)']")).click();
+//		driver.findElement(By.cssSelector("span[onclick='r(5)']")).click();
+//		driver.findElement(By.cssSelector("span[onclick='r(3)']")).click();
+//		driver.findElement(By.cssSelector("span[onclick='r(4)']")).click();
+//		driver.findElement(By.cssSelector("span[onclick='r(5)']")).click();
+//		
+//		driver.findElement(By.cssSelector("span[onclick=\"r('=')\"]")).click();
+		
+		cp.getnum3().click();
+		cp.getnum4().click();
+		cp.getnum5().click();
+		cp.getnum3().click();
+		cp.getnum4().click();
+		cp.getnum5().click();
+		
+		String actualResult = driver.findElement(By.id("sciOutPut")).getText();
+		System.out.println(actualResult.trim());
+		String actualResultTrim = actualResult.trim();
+		
+		Assert.assertEquals(actualResultTrim, expectedResultString);
+	}
+	
+	@Test
+	public void subTest()
+	{
+		String expectedResultString = calculateExpected.subexp();
+		
+		driver.findElement(By.cssSelector("span[onclick='r(2)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(3)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(4)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(8)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(2)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(3)']")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick=\"r('-')\"]")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick=\"r('-')\"]")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(2)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(3)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(0)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(9)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(4)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(8)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(2)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(3)']")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick=\"r('=')\"]")).click();
+		
+		String actualResult = driver.findElement(By.id("sciOutPut")).getText();
+		System.out.println(actualResult.trim());
+		String actualResultTrim = actualResult.trim();
+		
+		Assert.assertEquals(actualResultTrim, expectedResultString);
+		
+	}
+	
+	@Test
+	public void mulTest()
+	{
+		String expectedResultString = calculateExpected.mulexp();
+		
+		driver.findElement(By.cssSelector("span[onclick='r(4)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(2)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(3)']")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick=\"r('*')\"]")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick='r(5)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(2)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(5)']")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick=\"r('=')\"]")).click();
+		
+		String actualResult = driver.findElement(By.id("sciOutPut")).getText();
+		System.out.println(actualResult.trim());
+		String actualResultTrim = actualResult.trim();
+		
+		Assert.assertEquals(actualResultTrim, expectedResultString);
+		
+	}
+	
+	@Test
+	public void divTest()
+	{
+		String expectedResultString = calculateExpected.divexp();
+		
+		driver.findElement(By.cssSelector("span[onclick='r(4)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(0)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(0)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(0)']")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick=\"r('/')\"]")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick='r(2)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(0)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(0)']")).click();
+		
+		
+		driver.findElement(By.cssSelector("span[onclick=\"r('=')\"]")).click();
+		
+		String actualResult = driver.findElement(By.id("sciOutPut")).getText();
+		System.out.println(actualResult.trim());
+		String actualResultTrim = actualResult.trim();
+		
+		Assert.assertEquals(actualResultTrim, expectedResultString);
+		
+	}
+	
+	@AfterMethod
+	public void end() throws IOException
+	{
+		driver.close();
+	}
+
+}

@@ -1,0 +1,7 @@
+13:03:19.709 [TestNG-tests-1] INFO  resourses.Base - n2 is entered
+13:03:19.776 [TestNG-tests-1] INFO  resourses.Base - result extracted
+13:03:19.856 [TestNG-tests-1] INFO  resourses.Base - driver closed
+13:03:20.852 [TestNG-tests-1] INFO  resourses.Base - driver is initialised
+13:03:22.107 [TestNG-tests-1] INFO  resourses.Base - website is loaded
+13:03:22.109 [TestNG-tests-1] INFO  resourses.Base - Starting subtraction operation
+13:03:22.337 [TestNG-tests-1] INFO  resourses.Base - n1 is entered

@@ -1,0 +1,75 @@
+package tests;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import resourses.Base;
+
+public class calTests extends Base{
+	
+
+	@BeforeMethod
+	public void start() throws IOException
+	{
+		driver = initializeBrowser();
+		String url = prop.getProperty("url");
+		driver.get(url);
+	}
+	
+	@Test
+	public void addTest()
+	{
+		String num1 = prop.getProperty("a1");
+		int n1=Integer.parseInt(num1);  
+		
+		String num2 = prop.getProperty("a2");
+		int n2=Integer.parseInt(num2);  
+		
+		int expectedResult = n1*n2;
+		String expectedResultString=Integer.toString(expectedResult);
+		//driver.findElement(By.id("sciOutPut")).sendKeys(num1);
+		
+		
+		driver.findElement(By.cssSelector("span[onclick='r(4)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(2)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(3)']")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick=\"r('*')\"]")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick='r(5)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(2)']")).click();
+		driver.findElement(By.cssSelector("span[onclick='r(5)']")).click();
+		
+		driver.findElement(By.cssSelector("span[onclick=\"r('=')\"]")).click();
+		
+		String actualResult = driver.findElement(By.id("sciOutPut")).getText();
+		System.out.println(actualResult.trim());
+		String actualResultTrim = actualResult.trim();
+		
+		Assert.assertEquals(actualResultTrim, expectedResultString);
+	}
+	
+	@Test
+	public void subTest()
+	{
+		
+	}
+	
+	@Test
+	public void mulTest()
+	{
+		
+	}
+	
+	@Test
+	public void divTest()
+	{
+		
+	}
+
+}

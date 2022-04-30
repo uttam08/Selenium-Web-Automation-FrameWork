@@ -1,0 +1,42 @@
+import java.io.IOException;
+
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import resourses.Base;
+
+public class Tests extends Base{
+
+	@BeforeMethod
+	public void start() throws IOException
+	{
+		driver = initializeBrowser();
+		String url = prop.getProperty("url");
+		driver.get(url);
+	}
+	
+	@Test
+	public void addTest()
+	{
+		
+	}
+	
+	@Test
+	public void subTest()
+	{
+		
+	}
+	
+	@Test
+	public void mulTest()
+	{
+		
+	}
+	
+	@Test
+	public void divTest()
+	{
+		
+	}
+
+}

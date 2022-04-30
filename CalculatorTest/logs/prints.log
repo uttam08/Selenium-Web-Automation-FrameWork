@@ -1,0 +1,3 @@
+13:03:22.661 [TestNG-tests-1] INFO  resourses.Base - n2 is entered
+13:03:22.724 [TestNG-tests-1] INFO  resourses.Base - result extracted
+13:03:22.820 [TestNG-tests-1] INFO  resourses.Base - driver closed

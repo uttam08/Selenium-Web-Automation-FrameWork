@@ -1,0 +1,54 @@
+package tests;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import resourses.Base;
+
+public class calTests extends Base{
+	
+	List<Integer> lst = new ArrayList<Integer>();
+
+	@BeforeMethod
+	public void start() throws IOException
+	{
+		driver = initializeBrowser();
+		String url = prop.getProperty("url");
+		driver.get(url);
+	}
+	
+	@Test
+	public void addTest()
+	{
+		String num1 = prop.getProperty("a1");
+		int n1=Integer.parseInt(num1);  
+		lst.add(n1);
+		String num2 = prop.getProperty("a2");
+		int n2=Integer.parseInt(num2);  
+		lst.add(n2);
+		driver.findElement(By.id("sciOutPut")).sendKeys(num1);
+	}
+	
+	@Test
+	public void subTest()
+	{
+		
+	}
+	
+	@Test
+	public void mulTest()
+	{
+		
+	}
+	
+	@Test
+	public void divTest()
+	{
+		
+	}
+
+}
